@@ -8,6 +8,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Save, Upload, User } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import QuizComponent from '@/components/QuizComponent';
 
 const ProfileEdit = () => {
   const { toast } = useToast();
@@ -27,7 +28,6 @@ const ProfileEdit = () => {
   };
 
   const handleSave = () => {
-    // Bu yerda ma'lumotlarni saqlash logikasi bo'ladi
     toast({
       title: "Muvaffaqiyat!",
       description: "Profil ma'lumotlari yangilandi.",
@@ -35,7 +35,6 @@ const ProfileEdit = () => {
   };
 
   const handleImageUpload = () => {
-    // Bu yerda rasm yuklash logikasi bo'ladi
     toast({
       title: "Rasm yuklandi",
       description: "Profil rasmi muvaffaqiyatli yangilandi.",
@@ -130,6 +129,9 @@ const ProfileEdit = () => {
           </div>
         </CardContent>
       </Card>
+
+      {/* Quiz Section */}
+      <QuizComponent />
     </div>
   );
 };

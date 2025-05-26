@@ -4,17 +4,17 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ProfileView from '@/components/ProfileView';
 import ProfileEdit from '@/components/ProfileEdit';
-import CreativeTools from '@/components/CreativeTools';
+import QuizComponent from '@/components/QuizComponent';
 import { Button } from '@/components/ui/button';
-import { Edit, Eye, Palette } from 'lucide-react';
+import { Edit, Eye, Brain } from 'lucide-react';
 
 const Profile = () => {
-  const [activeTab, setActiveTab] = useState<'view' | 'edit' | 'creative'>('view');
+  const [activeTab, setActiveTab] = useState<'view' | 'edit' | 'quiz'>('view');
 
   const tabs = [
     { id: 'view', label: 'Profilni Ko\'rish', icon: Eye },
     { id: 'edit', label: 'Tahrirlash', icon: Edit },
-    { id: 'creative', label: 'Ijodiy Vositalar', icon: Palette }
+    { id: 'quiz', label: 'Zakovat Testi', icon: Brain }
   ];
 
   return (
@@ -29,7 +29,7 @@ const Profile = () => {
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
-                  onClick={() => setActiveTab(tab.id as 'view' | 'edit' | 'creative')}
+                  onClick={() => setActiveTab(tab.id as 'view' | 'edit' | 'quiz')}
                   className={`py-4 px-1 border-b-2 font-medium text-sm flex items-center space-x-2 transition-colors duration-200 ${
                     activeTab === tab.id
                       ? 'border-blue-600 text-blue-600'
@@ -47,7 +47,7 @@ const Profile = () => {
           <div className="p-6">
             {activeTab === 'view' && <ProfileView />}
             {activeTab === 'edit' && <ProfileEdit />}
-            {activeTab === 'creative' && <CreativeTools />}
+            {activeTab === 'quiz' && <QuizComponent />}
           </div>
         </div>
       </div>
