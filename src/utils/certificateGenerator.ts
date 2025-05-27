@@ -26,109 +26,140 @@ export const generateCertificate = async (data: CertificateData) => {
   pdf.setFillColor(240, 248, 255); // blue-50
   pdf.rect(0, 0, pageWidth, pageHeight, 'F');
   
-  // Border
+  // Decorative border
   pdf.setDrawColor(37, 99, 235); // blue-600
-  pdf.setLineWidth(2);
-  pdf.rect(10, 10, pageWidth - 20, pageHeight - 20);
-  
-  // Inner border
-  pdf.setDrawColor(245, 158, 11); // amber-500
-  pdf.setLineWidth(1);
+  pdf.setLineWidth(3);
   pdf.rect(15, 15, pageWidth - 30, pageHeight - 30);
   
-  // Header - Logo area (placeholder)
-  pdf.setFillColor(37, 99, 235); // blue-600
-  pdf.circle(50, 40, 15, 'F');
-  pdf.setTextColor(255, 255, 255);
-  pdf.setFontSize(20);
-  pdf.setFont('helvetica', 'bold');
-  pdf.text('ZK', 45, 45);
+  // Inner decorative border
+  pdf.setDrawColor(245, 158, 11); // amber-500
+  pdf.setLineWidth(1);
+  pdf.rect(20, 20, pageWidth - 40, pageHeight - 40);
   
-  // Header text
+  // Header - Logo area
+  pdf.setFillColor(37, 99, 235); // blue-600
+  pdf.circle(50, 45, 18, 'F');
+  pdf.setTextColor(255, 255, 255);
+  pdf.setFontSize(24);
+  pdf.setFont('helvetica', 'bold');
+  pdf.text('ZK', 43, 50);
+  
+  // Organization header
   pdf.setTextColor(31, 41, 55); // gray-800
-  pdf.setFontSize(12);
+  pdf.setFontSize(14);
+  pdf.setFont('helvetica', 'bold');
+  pdf.text('ZAKOVAT KLUBI', 75, 40);
+  pdf.setFontSize(10);
   pdf.setFont('helvetica', 'normal');
-  pdf.text('Zakovat Klubi', 70, 35);
-  pdf.text('Intellektual O\'yinlar Markazi', 70, 42);
+  pdf.text('Intellektual Rivojlanish Markazi', 75, 47);
+  pdf.text('Maktab Rahbariyati hamkorligida', 75, 52);
   
   // Main title
   pdf.setTextColor(37, 99, 235); // blue-600
-  pdf.setFontSize(36);
+  pdf.setFontSize(40);
   pdf.setFont('helvetica', 'bold');
-  const titleText = 'SERTIFIKAT';
+  const titleText = 'MINNATDORCHILIK SERTIFIKATI';
   const titleWidth = pdf.getTextWidth(titleText);
-  pdf.text(titleText, (pageWidth - titleWidth) / 2, 80);
+  pdf.text(titleText, (pageWidth - titleWidth) / 2, 85);
   
-  // Subtitle
-  pdf.setTextColor(245, 158, 11); // amber-500
-  pdf.setFontSize(16);
-  pdf.setFont('helvetica', 'normal');
-  const subtitleText = 'Zakovat Testi Muvaffaqiyatli Yakunlangani Uchun';
-  const subtitleWidth = pdf.getTextWidth(subtitleText);
-  pdf.text(subtitleText, (pageWidth - subtitleWidth) / 2, 95);
+  // Decorative line under title
+  pdf.setDrawColor(245, 158, 11); // amber-500
+  pdf.setLineWidth(2);
+  pdf.line(pageWidth/2 - 80, 90, pageWidth/2 + 80, 90);
   
-  // Student name
+  // Appreciation text
   pdf.setTextColor(31, 41, 55); // gray-800
-  pdf.setFontSize(24);
-  pdf.setFont('helvetica', 'bold');
-  const nameWidth = pdf.getTextWidth(studentName);
-  pdf.text(studentName, (pageWidth - nameWidth) / 2, 120);
-  
-  // Achievement text
   pdf.setFontSize(14);
   pdf.setFont('helvetica', 'normal');
-  const achievementText = 'quyidagi natijaga erishdi:';
-  const achievementWidth = pdf.getTextWidth(achievementText);
-  pdf.text(achievementText, (pageWidth - achievementWidth) / 2, 135);
+  const appreciationText = 'Ushbu sertifikat quyidagi shaxsga beriladi:';
+  const appreciationWidth = pdf.getTextWidth(appreciationText);
+  pdf.text(appreciationText, (pageWidth - appreciationWidth) / 2, 105);
   
-  // Score box
-  pdf.setFillColor(245, 245, 245); // gray-100
-  pdf.setDrawColor(209, 213, 219); // gray-300
-  pdf.roundedRect(pageWidth/2 - 40, 145, 80, 30, 5, 5, 'FD');
-  
-  // Score text
+  // Student name with decorative styling
   pdf.setTextColor(37, 99, 235); // blue-600
   pdf.setFontSize(28);
   pdf.setFont('helvetica', 'bold');
-  const scoreText = `${score}/${totalQuestions}`;
-  const scoreWidth = pdf.getTextWidth(scoreText);
-  pdf.text(scoreText, (pageWidth - scoreWidth) / 2, 165);
+  const nameWidth = pdf.getTextWidth(studentName);
+  pdf.text(studentName, (pageWidth - nameWidth) / 2, 125);
   
-  // Percentage
-  pdf.setTextColor(245, 158, 11); // amber-500
-  pdf.setFontSize(16);
-  const percentageText = `(${percentage}%)`;
-  const percentageWidth = pdf.getTextWidth(percentageText);
-  pdf.text(percentageText, (pageWidth - percentageWidth) / 2, 175);
+  // Underline for name
+  pdf.setDrawColor(245, 158, 11); // amber-500
+  pdf.setLineWidth(1);
+  pdf.line(pageWidth/2 - nameWidth/2 - 10, 130, pageWidth/2 + nameWidth/2 + 10, 130);
   
-  // Performance level
+  // Main appreciation message
   pdf.setTextColor(31, 41, 55); // gray-800
-  pdf.setFontSize(14);
+  pdf.setFontSize(12);
   pdf.setFont('helvetica', 'normal');
-  const performanceText = percentage >= 90 ? 'A\'lo' : percentage >= 80 ? 'Yaxshi' : percentage >= 70 ? 'Qoniqarli' : 'Mashq Talab';
-  const performanceWidth = pdf.getTextWidth(performanceText);
-  pdf.text(performanceText, (pageWidth - performanceWidth) / 2, 185);
+  
+  const messages = [
+    'Zakovat Klubi tomonidan tashkil etilgan intellektual testda',
+    'faol ishtirok etgani va o\'z bilim darajasini sinab ko\'rgani uchun',
+    'samimiy minnatdorchilik va ehtirom bilan taqdirlaymiz.'
+  ];
+  
+  messages.forEach((message, index) => {
+    const messageWidth = pdf.getTextWidth(message);
+    pdf.text(message, (pageWidth - messageWidth) / 2, 145 + (index * 8));
+  });
+  
+  // Test results in a decorative box
+  pdf.setFillColor(248, 250, 252); // gray-50
+  pdf.setDrawColor(203, 213, 225); // gray-300
+  pdf.roundedRect(pageWidth/2 - 50, 170, 100, 25, 3, 3, 'FD');
+  
+  pdf.setTextColor(37, 99, 235); // blue-600
+  pdf.setFontSize(16);
+  pdf.setFont('helvetica', 'bold');
+  const resultText = `Natija: ${score}/${totalQuestions} (${percentage}%)`;
+  const resultWidth = pdf.getTextWidth(resultText);
+  pdf.text(resultText, (pageWidth - resultWidth) / 2, 185);
+  
+  // Appreciation from leadership
+  pdf.setTextColor(31, 41, 55); // gray-800
+  pdf.setFontSize(11);
+  pdf.setFont('helvetica', 'italic');
+  
+  const leadershipMessages = [
+    'Maktab rahbariyati va Zakovat Klubi tashkilotchilari tomonidan',
+    'kelajakda ham bunday faoliyatlarda ishtirok etishingizni samimiy orzu qilamiz.',
+    'Bilimingizni rivojlantirishda omadlar tilaymiz!'
+  ];
+  
+  leadershipMessages.forEach((message, index) => {
+    const messageWidth = pdf.getTextWidth(message);
+    pdf.text(message, (pageWidth - messageWidth) / 2, 205 + (index * 6));
+  });
+  
+  // Date and signatures area
+  pdf.setFontSize(10);
+  pdf.setFont('helvetica', 'normal');
   
   // Date
-  pdf.setFontSize(12);
-  const dateText = `Sana: ${date}`;
-  const dateWidth = pdf.getTextWidth(dateText);
-  pdf.text(dateText, (pageWidth - dateWidth) / 2, 200);
+  pdf.text(`Sana: ${date}`, 40, 235);
+  
+  // Signature lines
+  pdf.setDrawColor(107, 114, 128); // gray-500
+  pdf.line(40, 245, 120, 245);
+  pdf.text('Klub rahbari', 40, 250);
+  
+  pdf.line(pageWidth - 120, 245, pageWidth - 40, 245);
+  pdf.text('Maktab direktori', pageWidth - 120, 250);
   
   // Footer decorative elements
-  pdf.setDrawColor(245, 158, 11); // amber-500
-  pdf.setLineWidth(2);
-  pdf.line(50, 215, pageWidth - 50, 215);
+  pdf.setFillColor(245, 158, 11); // amber-500
+  pdf.circle(30, pageHeight - 30, 8, 'F');
+  pdf.circle(pageWidth - 30, pageHeight - 30, 8, 'F');
   
-  // Footer text
+  // Footer message
   pdf.setTextColor(107, 114, 128); // gray-500
-  pdf.setFontSize(10);
+  pdf.setFontSize(9);
   pdf.setFont('helvetica', 'italic');
-  const footerText = 'Bu sertifikat Zakovat Klubi tomonidan berilgan';
+  const footerText = '🏆 Har bir ishtirok - bilim yo\'lida qadamdir 🏆';
   const footerWidth = pdf.getTextWidth(footerText);
-  pdf.text(footerText, (pageWidth - footerWidth) / 2, 225);
+  pdf.text(footerText, (pageWidth - footerWidth) / 2, pageHeight - 15);
   
   // Save the PDF
-  const fileName = `${studentName.replace(/\s+/g, '_')}_Sertifikat.pdf`;
+  const fileName = `${studentName.replace(/\s+/g, '_')}_Ishtirok_Sertifikati.pdf`;
   pdf.save(fileName);
 };

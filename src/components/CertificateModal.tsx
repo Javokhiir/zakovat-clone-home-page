@@ -44,7 +44,7 @@ const CertificateModal = ({ isOpen, onClose, score, totalQuestions }: Certificat
       
       toast({
         title: "Muvaffaqiyat!",
-        description: "Sertifikat muvaffaqiyatli yaratildi va yuklab olindi",
+        description: "Ishtirok sertifikati yaratildi va yuklab olindi",
       });
       
       setStudentName('');
@@ -61,7 +61,6 @@ const CertificateModal = ({ isOpen, onClose, score, totalQuestions }: Certificat
   };
 
   const percentage = Math.round((score / totalQuestions) * 100);
-  const isPassing = percentage >= 70;
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -69,28 +68,36 @@ const CertificateModal = ({ isOpen, onClose, score, totalQuestions }: Certificat
         <DialogHeader>
           <DialogTitle className="flex items-center justify-center">
             <Award className="w-6 h-6 mr-2 text-yellow-500" />
-            Sertifikat Olish
+            Ishtirok Sertifikati
           </DialogTitle>
         </DialogHeader>
 
         <div className="space-y-6">
           {/* Test Result Summary */}
-          <Card className={`border-2 ${isPassing ? 'border-green-200 bg-green-50' : 'border-yellow-200 bg-yellow-50'}`}>
+          <Card className="border-2 border-blue-200 bg-blue-50">
             <CardContent className="p-4 text-center">
-              <div className={`text-3xl font-bold ${isPassing ? 'text-green-600' : 'text-yellow-600'}`}>
+              <div className="text-3xl font-bold text-blue-600">
                 {score}/{totalQuestions}
               </div>
-              <div className={`text-sm ${isPassing ? 'text-green-600' : 'text-yellow-600'}`}>
-                {percentage}% - {isPassing ? 'Muvaffaqiyatli' : 'Qoniqarli'}
+              <div className="text-sm text-blue-600">
+                {percentage}% - Ishtirok etganingiz uchun rahmat!
               </div>
             </CardContent>
           </Card>
+
+          {/* Appreciation Message */}
+          <div className="text-center bg-gradient-to-r from-yellow-50 to-orange-50 p-4 rounded-lg">
+            <p className="text-sm text-gray-700 italic">
+              "Har bir ishtirok bilim yo'lida muhim qadamdir. 
+              Testda qatnashganingiz uchun sizga minnatdormiz!"
+            </p>
+          </div>
 
           {/* Student Name Input */}
           <div className="space-y-2">
             <Label htmlFor="studentName" className="flex items-center">
               <User size={16} className="mr-2" />
-              Ism va Familiya
+              To'liq Ism va Familiya
             </Label>
             <Input
               id="studentName"
@@ -105,15 +112,15 @@ const CertificateModal = ({ isOpen, onClose, score, totalQuestions }: Certificat
           <Button
             onClick={handleGenerateCertificate}
             disabled={!studentName.trim() || isGenerating}
-            className="w-full bg-blue-600 hover:bg-blue-700"
+            className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800"
             size="lg"
           >
             <Download size={16} className="mr-2" />
-            {isGenerating ? 'Yaratilmoqda...' : 'Sertifikatni Yuklab Olish'}
+            {isGenerating ? 'Sertifikat tayyorlanmoqda...' : 'Ishtirok Sertifikatini Olish'}
           </Button>
 
           <p className="text-xs text-gray-500 text-center">
-            Sertifikat PDF formatida yuklab olinadi
+            Sertifikat minnatdorchilik belgisi sifatida PDF formatida yuklab olinadi
           </p>
         </div>
       </DialogContent>
