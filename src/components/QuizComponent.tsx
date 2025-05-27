@@ -90,7 +90,7 @@ const QuizComponent = () => {
             </li>
             <li className="flex items-center">
               <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
-              Test yakunlanganidan keyin natijangizni ko'rishingiz mumkin
+              Test yakunlanganidan keyin natijangizni ko'rishingiz va sertifikatingizni yuklab olishingiz mumkin
             </li>
           </ul>
         </CardContent>

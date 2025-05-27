@@ -16,8 +16,8 @@ const Hero = () => {
                 Xush Kelibsiz
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
-                Bilim va ijodkorlik markazi. Yoshlarning intellektual rivojlanishi va 
-                ijodiy qobiliyatlarini oshirishga yordam beramiz.
+                Bilim va intellekt markazi. Yoshlarning intellektual rivojlanishi va
+                ijodiy qobiliyatlarini oshirish uchun platforma .
               </p>
             </div>
 
@@ -41,8 +41,8 @@ const Hero = () => {
                 <div className="bg-purple-100 w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-2">
                   <BookOpen className="text-purple-600" size={24} />
                 </div>
-                <div className="text-2xl font-bold text-gray-900">20+</div>
-                <div className="text-sm text-gray-600">Kurslar</div>
+                <div className="text-2xl font-bold text-gray-900">200+</div>
+                <div className="text-sm text-gray-600">Savollar</div>
               </div>
             </div>
 

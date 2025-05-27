@@ -21,7 +21,7 @@ const Footer = () => {
             </div>
             <p className="text-gray-300 leading-relaxed">
               Yoshlarning intellektual rivojlanishi va ijodiy qobiliyatlarini 
-              oshirishga yo'naltirilgan ta'lim markazi.
+              oshirishga yo'naltirilgan platforma.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-blue-500 transition-colors">
@@ -68,32 +68,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Xizmatlar</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  Dasturlash kurslari
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  Matematik olimpiadalar
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  Loyiha ishlab chiqish
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  Mentorlik dasturi
-                </a>
-              </li>
-            </ul>
-          </div>
 
           {/* Contact */}
           <div>

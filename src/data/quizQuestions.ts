@@ -43,6 +43,7 @@ export const quizQuestions: Question[] = [
     correct: 2,
     explanation: "Tinch okeani Yer yuzasining 1/3 qismini egallaydi."
   },
+
   {
     id: 6,
     question: "1 kilometrda necha metr bor?",
@@ -357,5 +358,77 @@ export const quizQuestions: Question[] = [
     options: ["Atlantika", "Hind", "Tinch", "Shimoliy muz"],
     correct: 2,
     explanation: "Tinch okeanidagi Mariana chuqurligi 11,000 metr chuqurlikda."
-  }
+  },
+  {
+    id: 51,
+    question: "Quyosh Sharqdan chiqsa, Oy qayerdan chiqadi?",
+    options: ["Sharqdan", "G‘arbdan", "Shimoldan", "Janubdan"],
+    correct: 0,
+  },
+  {
+    id: 52,
+    question: "Bir ota 4 o‘g‘liga 4 ta nonni teng taqsimladi, lekin hech kimda kam yoki ko‘p bo‘lmadi. Qanday?",
+    options: [
+      "Har bir nonni 2ga bo‘ldi",
+      "O‘g‘illar nonni birga yedi",
+      "Har biriga yarim non berdi",
+      "Nonlarni yig‘ib bo‘ldi",
+    ],
+    correct: 0,
+  },
+  {
+    id: 53,
+    question: "Qo‘lida faqat ikkita gugurt bor odam qorong‘ida xonaga kirsa, birinchi nimani yoqadi?",
+    options: ["Chiroq", "Gugurt", "Sham", "Pech"],
+    correct: 1,
+  },
+
+  {
+    id: 54,
+    question: "Qaysi so‘z har doim noto‘g‘ri yoziladi?",
+    options: ["Noto‘g‘ri", "So‘z", "Yoziladi", "Doim"],
+    correct: 0,
+  },
+  {
+    id: 55,
+    question: "Bir xonada 5 ta sham bor. 2 tasini yoqdim. Nechta sham qoladi?",
+    options: ["3", "2", "5", "1"],
+    correct: 0,
+  },
+  {
+    id: 56,
+    question: "Qaysi savolga hech qachon 'Ha' deb javob berib bo‘lmaydi?",
+    options: [
+      "Siz uxlayapsizmi?",
+      "Siz tirikmisiz?",
+      "Siz hozir gapiryapsizmi?",
+      "Siz eshitayapsizmi?",
+    ],
+    correct: 0,
+  },
+  {
+    id: 57,
+    question: "Qaysi narsani ko‘rmaymiz, lekin yo‘qligini sezamiz?",
+    options: ["Havo", "Suv", "Olov", "Mars"],
+    correct: 0,
+  },
+  {
+    id: 58,
+    question: "Bir odam 100 qadam oldinga yurdi, ammo orqaga qaytib keldi. U qaerga bordi?",
+    options: ["Uyiga", "Do‘konga", "Xayolida", "Sport bilan shug‘ullandi"],
+    correct: 3,
+  },
+
+  {
+    id: 59,
+    question: "Avvaliga oq, keyin yashil, so‘ng sariq va nihoyat jigarrang. Bu nima?",
+    options: ["Yaproq", "Svetafor", "Kun", "Guldasta"],
+    correct: 0,
+  },
+  {
+    id: 60,
+    question: "Kim doimo sizning ishingiz bilan band, ammo sizni tanimaydi?",
+    options: ["Kuzatuvchi", "Soat", "Kompyuter", "Soya"],
+    correct: 3,
+  },
 ];

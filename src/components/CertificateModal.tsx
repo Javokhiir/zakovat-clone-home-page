@@ -69,7 +69,7 @@ const CertificateModal = ({ isOpen, onClose, score, totalQuestions }: Certificat
         <DialogHeader>
           <DialogTitle className="flex items-center justify-center">
             <Award className="w-6 h-6 mr-2 text-yellow-500" />
-            Ishtirok Sertifikati
+            Sertifikat
           </DialogTitle>
         </DialogHeader>
 
@@ -90,7 +90,7 @@ const CertificateModal = ({ isOpen, onClose, score, totalQuestions }: Certificat
           <div className="text-center bg-gradient-to-r from-yellow-50 to-orange-50 p-4 rounded-lg">
             <p className="text-sm text-gray-700 italic">
               "Har bir ishtirok bilim yo'lida muhim qadamdir. 
-              Testda qatnashganingiz uchun sizga minnatdormiz!"
+              Testda qatnashganingiz uchun sizga minnatdorchilik bildiramiz!"
             </p>
           </div>
 
@@ -117,11 +117,11 @@ const CertificateModal = ({ isOpen, onClose, score, totalQuestions }: Certificat
             size="lg"
           >
             <Download size={16} className="mr-2" />
-            {isGenerating ? 'Sertifikat tayyorlanmoqda...' : 'Ishtirok Sertifikatini Olish'}
+            {isGenerating ? 'Sertifikat tayyorlanmoqda...' : 'Yuklab olish'}
           </Button>
 
           <p className="text-xs text-gray-500 text-center">
-            Sertifikat minnatdorchilik belgisi sifatida PDF formatida yuklab olinadi
+            Ushbu sertifikat minnatdorchilik belgisi sifatida taqdim etilmoqda
           </p>
         </div>
       </DialogContent>
