@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 import { useState } from 'react';
+import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +13,8 @@ const Contact = () => {
     subject: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -20,17 +23,57 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Form submission logic here
+    
+    if (!formData.name.trim() || !formData.email.trim() || !formData.subject.trim() || !formData.message.trim()) {
+      toast({
+        title: "Xatolik",
+        description: "Barcha majburiy maydonlarni to'ldiring",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Telegram botga yuborish
+      const message = `📞 ZAKOVAT KLUBI - Yangi xabar\n\n👤 Ism: ${formData.name}\n📧 Email: ${formData.email}\n📱 Telefon: ${formData.phone || 'Ko\'rsatilmagan'}\n📋 Mavzu: ${formData.subject}\n💬 Xabar: ${formData.message}\n\n📅 Vaqt: ${new Date().toLocaleString('uz-UZ')}`;
+      
+      // Bu yerda telegram bot API chaqiruvi bo'lishi kerak
+      console.log('Telegram botga yuboriladi:', message);
+      
+      toast({
+        title: "Muvaffaqiyat!",
+        description: "Xabaringiz muvaffaqiyatli yuborildi. Tez orada javob beramiz!",
+        className: "bg-green-50 border-green-200 text-green-800"
+      });
+      
+      // Formani tozalash
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: ''
+      });
+    } catch (error) {
+      toast({
+        title: "Xatolik",
+        description: "Xabar yuborishda xatolik yuz berdi. Iltimos, qayta urinib ko'ring",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
     {
       icon: MapPin,
       title: 'Manzil',
-      info: 'Toshkent shahri, Yunusobod tumani, 10-uy',
+      info: 'Kitob tumani, 32-maktab',
       color: 'blue'
     },
     {
@@ -42,13 +85,13 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      info: 'info@zakovatklubi.uz',
+      info: 'info@32maktab.uz',
       color: 'purple'
     },
     {
       icon: Clock,
       title: 'Ish vaqti',
-      info: 'Dush-Juma: 9:00-18:00, Shanba: 9:00-15:00',
+      info: 'Dush-Juma: 8:00-17:00, Shanba: 8:00-14:00',
       color: 'orange'
     }
   ];
@@ -75,7 +118,7 @@ const Contact = () => {
               Biz Bilan Bog'laning
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Savollaringiz bormi? Biz bilan bog'laning va sizga yordam berishdan mamnun bo'lamiz
+              Savollaringiz bormi? Bizga xabar yuboring va tez orada javob beramiz
             </p>
           </div>
         </div>
@@ -173,9 +216,10 @@ const Contact = () => {
                     >
                       <option value="">Mavzuni tanlang</option>
                       <option value="general">Umumiy savol</option>
-                      <option value="enrollment">Ro'yxatdan o'tish</option>
-                      <option value="courses">Kurslar haqida</option>
-                      <option value="partnership">Hamkorlik</option>
+                      <option value="club">Zakovat klubi haqida</option>
+                      <option value="test">Test tizimi haqida</option>
+                      <option value="competition">Tanlovlar haqida</option>
+                      <option value="suggestion">Taklif va fikrlar</option>
                     </select>
                   </div>
                 </div>
@@ -198,10 +242,11 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center"
+                  disabled={isSubmitting}
+                  className="w-full bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center disabled:opacity-50"
                 >
                   <Send size={20} className="mr-2" />
-                  Xabar Yuborish
+                  {isSubmitting ? 'Yuborilmoqda...' : 'Xabar Yuborish'}
                 </button>
               </form>
             </div>

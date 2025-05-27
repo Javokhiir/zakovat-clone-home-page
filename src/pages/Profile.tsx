@@ -4,17 +4,15 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ProfileView from '@/components/ProfileView';
 import ProfileEdit from '@/components/ProfileEdit';
-import QuizComponent from '@/components/QuizComponent';
 import { Button } from '@/components/ui/button';
-import { Edit, Eye, Brain } from 'lucide-react';
+import { Edit, Eye } from 'lucide-react';
 
 const Profile = () => {
-  const [activeTab, setActiveTab] = useState<'view' | 'edit' | 'quiz'>('view');
+  const [activeTab, setActiveTab] = useState<'view' | 'edit'>('view');
 
   const tabs = [
     { id: 'view', label: 'Profilni Ko\'rish', icon: Eye },
-    { id: 'edit', label: 'Tahrirlash', icon: Edit },
-    { id: 'quiz', label: 'Zakovat Testi', icon: Brain }
+    { id: 'edit', label: 'Tahrirlash', icon: Edit }
   ];
 
   return (
@@ -29,7 +27,7 @@ const Profile = () => {
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
-                  onClick={() => setActiveTab(tab.id as 'view' | 'edit' | 'quiz')}
+                  onClick={() => setActiveTab(tab.id as 'view' | 'edit')}
                   className={`py-4 px-1 border-b-2 font-medium text-sm flex items-center space-x-2 transition-colors duration-200 ${
                     activeTab === tab.id
                       ? 'border-blue-600 text-blue-600'
@@ -47,7 +45,6 @@ const Profile = () => {
           <div className="p-6">
             {activeTab === 'view' && <ProfileView />}
             {activeTab === 'edit' && <ProfileEdit />}
-            {activeTab === 'quiz' && <QuizComponent />}
           </div>
         </div>
       </div>

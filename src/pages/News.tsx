@@ -8,63 +8,63 @@ const News = () => {
   const news = [
     {
       id: 1,
-      title: 'Yangi dasturlash kurslari boshlandi',
-      excerpt: 'Python, JavaScript va React texnologiyalari bo\'yicha yangi kurslar endi barcha yoshdagi o\'quvchilar uchun mavjud. Tajribali mentorlar bilan birga...',
-      content: 'Kurslar haftada 3 marta bo\'lib o\'tadi va amaliy loyihalar ustida ishlash imkoniyatini beradi.',
-      date: '2024-01-15',
-      author: 'Admin',
-      image: 'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=600&h=300&fit=crop',
-      category: 'Ta\'lim'
+      title: 'Kitob tumani 32-maktabda yangi zakovat oyini e\'lon qilindi',
+      excerpt: 'Yaqin kunlarda maktabimizda katta zakovat bellashuvi o\'tkaziladi. Barcha sinf o\'quvchilari ishtirok etishlari mumkin...',
+      content: 'O\'yin turli fanlar bo\'yicha savollardan tashkil topgan.',
+      date: '2024-01-20',
+      author: 'Maktab Rahbariyati',
+      image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=300&fit=crop',
+      category: 'Zakovat O\'yini'
     },
     {
       id: 2,
-      title: 'Xalqaro olimpiadada 3 ta medal qo\'lga kiritildi',
-      excerpt: 'Bizning talabalarimiz xalqaro matematik olimpiadasida ajoyib natijalar ko\'rsatib, 1 ta oltin va 2 ta kumush medal qo\'lga kiritishdi...',
-      content: 'Bu yutuq klubimizning yuqori sifatli ta\'lim berishini yana bir bor tasdiqladi.',
-      date: '2024-01-10',
-      author: 'Mentor Team',
-      image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=300&fit=crop',
-      category: 'Yutuq'
+      title: 'Eng yaxshi bilimdon o\'quvchilar e\'tirof etildi',
+      excerpt: 'O\'tgan oylik natijalar bo\'yicha eng bilimdon o\'quvchilar aniqlanib, ularni taqdirlash marosimi o\'tkazildi...',
+      content: 'Har bir sinf bo\'yicha eng yaxshi natijalarga erishgan o\'quvchilar sovg\'alar bilan taqdirlandi.',
+      date: '2024-01-18',
+      author: 'Zakovat Klubi',
+      image: 'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=600&h=300&fit=crop',
+      category: 'Taqdirlash'
     },
     {
       id: 3,
-      title: 'Zamonaviy laboratoriya ochildi',
-      excerpt: 'Eng so\'nggi texnologiyalar bilan jihozlangan yangi laboratoriya o\'quvchilarimiz uchun ochildi. Bu yerda robotexnika va sun\'iy intellekt...',
-      content: 'Laboratoriya barcha zamonaviy jihozlar bilan ta\'minlangan.',
-      date: '2024-01-05',
-      author: 'Admin',
+      title: 'Yangi zakovat test platformasi ishga tushirildi',
+      excerpt: 'Maktab o\'quvchilari uchun maxsus online test platformasi yaratildi. Bu platforma orqali bilimlarini sinab ko\'rishlari mumkin...',
+      content: 'Platforma turli darajadagi savollar bilan to\'ldirilgan.',
+      date: '2024-01-15',
+      author: 'IT Guruhi',
       image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=300&fit=crop',
-      category: 'Infratuzilma'
+      category: 'Texnologiya'
     },
     {
       id: 4,
-      title: 'Startap tanlovida g\'olib bo\'ldik',
-      excerpt: 'Yoshlar startap tanlovida bizning jamoamiz birinchi o\'rinni egalladi. Innovatsion loyiha bilan...',
-      content: 'Loyiha ta\'lim sohasidagi muammolarni hal qilishga qaratilgan.',
-      date: '2023-12-28',
-      author: 'Startup Team',
-      image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&h=300&fit=crop',
-      category: 'Yutuq'
+      title: 'Matematika olimpiadasi g\'oliblari ma\'lum bo\'ldi',
+      excerpt: 'Maktab ichidagi matematika olimpiadasida ishtirok etgan o\'quvchilar orasidan g\'oliblar aniqlanib...',
+      content: 'G\'oliblar keyingi bosqichga yo\'llanma olishdi.',
+      date: '2024-01-12',
+      author: 'Matematika Kafedra',
+      image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&h=300&fit=crop',
+      category: 'Olimpiada'
     },
     {
       id: 5,
-      title: 'Yangi ingliz tili kurslari',
-      excerpt: 'IELTS va TOEFL imtihonlariga tayyorgarlik ko\'rish uchun maxsus kurslar tashkil etildi...',
-      content: 'Kurslar tajribali o\'qituvchilar tomonidan olib boriladi.',
-      date: '2023-12-20',
-      author: 'Language Dept',
-      image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&h=300&fit=crop',
-      category: 'Ta\'lim'
+      title: 'Zakovat klubida yangi a\'zolar qabul qilinmoqda',
+      excerpt: 'Zakovat klubiga qo\'shilish uchun ariza topshirish muddati uzaytirildi. Barcha ixtisoslashuvlar bo\'yicha...',
+      content: 'Klubga qo\'shilish uchun test topshirish talab etiladi.',
+      date: '2024-01-10',
+      author: 'Klub Rahbariyati',
+      image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=300&fit=crop',
+      category: 'A\'zolik'
     },
     {
       id: 6,
-      title: 'Xalqaro hamkorlik shartnomasi imzolandi',
-      excerpt: 'Evropaning yetakchi ta\'lim muassasalari bilan hamkorlik shartnomasi imzolandi...',
-      content: 'Bu talabalar almashinuvi dasturlarini kengaytirish imkonini beradi.',
-      date: '2023-12-15',
-      author: 'Admin',
-      image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&h=300&fit=crop',
-      category: 'Hamkorlik'
+      title: 'Maktab kuni bayram tadbirlari rejalashtirilmoqda',
+      excerpt: 'Yaqinlashib kelayotgan maktab kuniga bag\'ishlangan maxsus tadbirlar va zakovat tanlovlari...',
+      content: 'Barcha o\'quvchilar faol ishtirok etishlari kutilmoqda.',
+      date: '2024-01-08',
+      author: 'Tashkilot Qo\'mitasi',
+      image: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=600&h=300&fit=crop',
+      category: 'Bayram'
     }
   ];
 
@@ -77,7 +77,7 @@ const News = () => {
     });
   };
 
-  const categories = ['Barchasi', 'Ta\'lim', 'Yutuq', 'Infratuzilma', 'Hamkorlik'];
+  const categories = ['Barchasi', 'Zakovat O\'yini', 'Taqdirlash', 'Texnologiya', 'Olimpiada', 'A\'zolik', 'Bayram'];
   
   return (
     <div className="min-h-screen bg-white">
@@ -88,10 +88,10 @@ const News = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Yangiliklar
+              Kitob tumani 32-maktab Yangiliklari
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Klubimizning eng so'nggi yangiliklari, yutuqlari va e'lonlari
+              Maktabimizdagi eng so'nggi yangiliklar, zakovat o'yinlari va bilimdon o'quvchilarimiz haqida
             </p>
           </div>
         </div>
@@ -153,16 +153,13 @@ const News = () => {
                     {item.excerpt}
                   </p>
                   
-                  <Link
-                    to={`/news/${item.id}`}
-                    className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium group"
-                  >
+                  <div className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium group cursor-pointer">
                     Batafsil o'qish
                     <ArrowRight 
                       size={16} 
                       className="ml-1 group-hover:translate-x-1 transition-transform" 
                     />
-                  </Link>
+                  </div>
                 </div>
               </article>
             ))}

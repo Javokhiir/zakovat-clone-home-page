@@ -2,7 +2,7 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
-import NewsSection from '@/components/NewsSection';
+import LiveBoard from '@/components/LiveBoard';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -11,7 +11,7 @@ const Index = () => {
       <Navbar />
       <Hero />
       <Features />
-      <NewsSection />
+      <LiveBoard />
       <Footer />
     </div>
   );

@@ -45,6 +45,7 @@ const CertificateModal = ({ isOpen, onClose, score, totalQuestions }: Certificat
       toast({
         title: "Muvaffaqiyat!",
         description: "Ishtirok sertifikati yaratildi va yuklab olindi",
+        className: "bg-green-50 border-green-200 text-green-800"
       });
       
       setStudentName('');

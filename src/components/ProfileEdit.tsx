@@ -8,7 +8,6 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Save, Upload, User } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
-import QuizComponent from '@/components/QuizComponent';
 
 const ProfileEdit = () => {
   const { toast } = useToast();
@@ -31,6 +30,7 @@ const ProfileEdit = () => {
     toast({
       title: "Muvaffaqiyat!",
       description: "Profil ma'lumotlari yangilandi.",
+      className: "bg-green-50 border-green-200 text-green-800"
     });
   };
 
@@ -38,6 +38,7 @@ const ProfileEdit = () => {
     toast({
       title: "Rasm yuklandi",
       description: "Profil rasmi muvaffaqiyatli yangilandi.",
+      className: "bg-blue-50 border-blue-200 text-blue-800"
     });
   };
 
@@ -129,9 +130,6 @@ const ProfileEdit = () => {
           </div>
         </CardContent>
       </Card>
-
-      {/* Quiz Section */}
-      <QuizComponent />
     </div>
   );
 };
