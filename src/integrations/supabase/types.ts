@@ -9,6 +9,99 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      admin_users: {
+        Row: {
+          created_at: string | null
+          id: string
+          role: string | null
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          role?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          role?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      leaderboard: {
+        Row: {
+          full_name: string
+          games_played: number | null
+          id: string
+          medal_type: string | null
+          rank_position: number | null
+          total_score: number | null
+          updated_at: string | null
+          user_id: string | null
+        }
+        Insert: {
+          full_name: string
+          games_played?: number | null
+          id?: string
+          medal_type?: string | null
+          rank_position?: number | null
+          total_score?: number | null
+          updated_at?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          full_name?: string
+          games_played?: number | null
+          id?: string
+          medal_type?: string | null
+          rank_position?: number | null
+          total_score?: number | null
+          updated_at?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      news: {
+        Row: {
+          author: string | null
+          category: string | null
+          content: string | null
+          created_at: string | null
+          excerpt: string | null
+          id: string
+          image_url: string | null
+          published_at: string | null
+          title: string
+          updated_at: string | null
+        }
+        Insert: {
+          author?: string | null
+          category?: string | null
+          content?: string | null
+          created_at?: string | null
+          excerpt?: string | null
+          id?: string
+          image_url?: string | null
+          published_at?: string | null
+          title: string
+          updated_at?: string | null
+        }
+        Update: {
+          author?: string | null
+          category?: string | null
+          content?: string | null
+          created_at?: string | null
+          excerpt?: string | null
+          id?: string
+          image_url?: string | null
+          published_at?: string | null
+          title?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           avatar_url: string | null
@@ -39,6 +132,60 @@ export type Database = {
           name?: string | null
           phone?: string | null
           updated_at?: string | null
+        }
+        Relationships: []
+      }
+      quiz_questions: {
+        Row: {
+          correct_answer: number
+          created_at: string | null
+          explanation: string | null
+          id: string
+          options: string[]
+          question: string
+          updated_at: string | null
+        }
+        Insert: {
+          correct_answer: number
+          created_at?: string | null
+          explanation?: string | null
+          id?: string
+          options: string[]
+          question: string
+          updated_at?: string | null
+        }
+        Update: {
+          correct_answer?: number
+          created_at?: string | null
+          explanation?: string | null
+          id?: string
+          options?: string[]
+          question?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      quiz_results: {
+        Row: {
+          completed_at: string | null
+          id: string
+          score: number
+          total_questions: number
+          user_id: string | null
+        }
+        Insert: {
+          completed_at?: string | null
+          id?: string
+          score: number
+          total_questions: number
+          user_id?: string | null
+        }
+        Update: {
+          completed_at?: string | null
+          id?: string
+          score?: number
+          total_questions?: number
+          user_id?: string | null
         }
         Relationships: []
       }
