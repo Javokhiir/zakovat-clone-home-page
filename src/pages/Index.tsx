@@ -2,7 +2,8 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
-import LiveBoard from '@/components/LiveBoard';
+import LiveBoardDynamic from '@/components/LiveBoardDynamic';
+import NewsDynamic from '@/components/NewsDynamic';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -11,7 +12,8 @@ const Index = () => {
       <Navbar />
       <Hero />
       <Features />
-      <LiveBoard />
+      <LiveBoardDynamic />
+      <NewsDynamic />
       <Footer />
     </div>
   );

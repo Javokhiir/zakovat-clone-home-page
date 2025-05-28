@@ -9,6 +9,81 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          bio: string | null
+          email: string | null
+          id: string
+          location: string | null
+          name: string | null
+          phone: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          avatar_url?: string | null
+          bio?: string | null
+          email?: string | null
+          id: string
+          location?: string | null
+          name?: string | null
+          phone?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          avatar_url?: string | null
+          bio?: string | null
+          email?: string | null
+          id?: string
+          location?: string | null
+          name?: string | null
+          phone?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      users: {
+        Row: {
+          achievements: string[] | null
+          bio: string | null
+          completed_tasks: number | null
+          email: string | null
+          id: string
+          join_date: string | null
+          location: string | null
+          name: string | null
+          phone: string | null
+          points: number | null
+          rank: string | null
+        }
+        Insert: {
+          achievements?: string[] | null
+          bio?: string | null
+          completed_tasks?: number | null
+          email?: string | null
+          id: string
+          join_date?: string | null
+          location?: string | null
+          name?: string | null
+          phone?: string | null
+          points?: number | null
+          rank?: string | null
+        }
+        Update: {
+          achievements?: string[] | null
+          bio?: string | null
+          completed_tasks?: number | null
+          email?: string | null
+          id?: string
+          join_date?: string | null
+          location?: string | null
+          name?: string | null
+          phone?: string | null
+          points?: number | null
+          rank?: string | null
+        }
+        Relationships: []
+      }
       Zakovat: {
         Row: {
           created_at: string
